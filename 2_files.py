@@ -16,7 +16,13 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    with open('referat.txt', 'r', encoding='utf-8') as f:
+        content = f.read()
+        print(len(content))
+        print(len(content.split()))
+    with open('referat2.txt', 'w', encoding='utf-8') as f:
+        new_file = content.replace('.', '!')
+        f.write(new_file)
 
 if __name__ == "__main__":
     main()
